@@ -10,11 +10,6 @@ export class CdkStarterStack extends cdk.Stack {
       natGateways: 0,
       maxAzs: 3,
       subnetConfiguration: [
-        // {
-        //   name: 'private-subnet-1',
-        //   subnetType: ec2.SubnetType.PRIVATE,
-        //   cidrMask: 24,
-        // },
         {
           name: 'public-subnet-1',
           subnetType: ec2.SubnetType.PUBLIC,
@@ -31,8 +26,6 @@ export class CdkStarterStack extends cdk.Stack {
     const securityGroup = new ec2.SecurityGroup(this, 'security-group-id', {
       vpc,
     });
-
-    console.log('availability zones 👉', cdk.Stack.of(this).availabilityZones);
 
     const webServer = new ec2.Instance(this, 'web-server', {
       instanceType: ec2.InstanceType.of(
