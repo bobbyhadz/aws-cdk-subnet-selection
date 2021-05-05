@@ -48,7 +48,7 @@ export class CdkStarterStack extends cdk.Stack {
       // 👇 you can also set the subnetGroupName to the name of the subnet group
       // vpcSubnets: {subnetGroupName: 'public-subnet-1'},
 
-      // 👇 you can also explicitly pick availability zones for the subnet
+      // 👇 you can also explicitly pick availability zones of the subnet
       // vpcSubnets: {
       //   subnetType: ec2.SubnetType.PUBLIC,
       //   availabilityZones: [cdk.Stack.of(this).availabilityZones[0]],
