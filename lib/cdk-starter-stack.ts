@@ -17,7 +17,7 @@ export class CdkStarterStack extends cdk.Stack {
         },
         {
           name: 'isolated-subnet-1',
-          subnetType: ec2.SubnetType.ISOLATED,
+          subnetType: ec2.SubnetType.PRIVATE_ISOLATED,
           cidrMask: 28,
         },
       ],
