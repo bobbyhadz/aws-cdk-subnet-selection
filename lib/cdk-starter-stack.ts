@@ -29,7 +29,7 @@ export class CdkStarterStack extends cdk.Stack {
 
     const webServer = new ec2.Instance(this, 'web-server', {
       instanceType: ec2.InstanceType.of(
-        ec2.InstanceClass.T2,
+        ec2.InstanceClass.BURSTABLE2,
         ec2.InstanceSize.MICRO,
       ),
       machineImage: ec2.MachineImage.latestAmazonLinux(),
