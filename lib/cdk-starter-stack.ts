@@ -6,7 +6,7 @@ export class CdkStarterStack extends cdk.Stack {
     super(scope, id, props);
 
     const vpc = new ec2.Vpc(this, 'my-cdk-vpc', {
-      cidr: '10.0.0.0/16',
+      ipAddresses: ec2.IpAddresses.cidr('10.0.0.0/16'),
       natGateways: 0,
       maxAzs: 3,
       subnetConfiguration: [
@@ -32,7 +32,7 @@ export class CdkStarterStack extends cdk.Stack {
         ec2.InstanceClass.BURSTABLE2,
         ec2.InstanceSize.MICRO,
       ),
-      machineImage: ec2.MachineImage.latestAmazonLinux(),
+      machineImage: ec2.MachineImage.latestAmazonLinux2(),
       vpc,
       securityGroup,
       // 👇 set the subnet type to PUBLIC
